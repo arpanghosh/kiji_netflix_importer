@@ -1,0 +1,11 @@
+@namespace("com.redeyetechguy.kiji")
+
+protocol NetflixRecords {
+
+  /** Metadata for a review. */
+  record Rating {
+    string user_id;
+    int rating;
+    string timestamp;
+  }
+}
