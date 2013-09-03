@@ -33,5 +33,5 @@ hadoop fs -copyFromLocal <local_path> <Hadoop fs path>
 
 9) The following command runs the included MovieBulkImporter to load 'flat_netflix_movie_ratings.txt' into
 the just created 'movies' table:
-kiji jar <project root dir>/target/netflix_import-1.0-SNAPSHOT.jar com.redeyetechguy.kiji.Driver <Hadoop fs path to directory containing flat_netflix_movie_ratings.txt>
+kiji jar <project root dir>/target/netflix_import-1.0-SNAPSHOT.jar com.redeyetechguy.kiji.Driver <Hadoop fs path to directory containing flat_netflix_movie_ratings.txt> <Kiji URI of 'movies' table>
 
