@@ -14,7 +14,6 @@ directory
 current working directory.
 
 5) Each line(movie) of the file has the following format:
-
 movie_id|movie_release_year,movie_name|user1_id,user1_rating,user1_rating_date|
 user2_id,user2_rating,user2_rating_date|user3_id,user3_rating,user3_rating_date|
 .........................|userN_id,userN_rating,userN_rating_date
@@ -28,10 +27,10 @@ kiji-schema-shell --file="Path to netflix_schema.ddl"
 
 
 8) Load the 'flat_netflix_movie_ratings.txt' file into HDFS:
-hadoop fs -copyFromLocal <local_path> <Hadoop fs path>
+hadoop fs -copyFromLocal "<local_path> <Hadoop fs path>"
 
 
 9) The following command runs the included MovieBulkImporter to load 'flat_netflix_movie_ratings.txt' into
 the just created 'movies' table:
-kiji jar <project root dir>/target/netflix_import-1.0-SNAPSHOT.jar com.redeyetechguy.kiji.Driver <Hadoop fs path to directory containing flat_netflix_movie_ratings.txt> <Kiji URI of 'movies' table>
 
+kiji jar "<project root dir>/target/netflix_import-1.0-SNAPSHOT.jar com.redeyetechguy.kiji.Driver <Hadoop fs path to directory containing flat_netflix_movie_ratings.txt> <Kiji URI of 'movies' table>"
