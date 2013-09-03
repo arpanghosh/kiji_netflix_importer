@@ -52,6 +52,7 @@ public class MovieBulkImporter extends KijiBulkImporter<LongWritable, Text>
             context.put(entityId, "info", "movie_id", movieId);
             context.put(entityId, "info", "movie_name", movieName);
             context.put(entityId, "info", "movie_release_year", movieReleaseYear);
+            context.put(entityId, "info", "similar_movies", null);
 
             //Extract & write ratings for this movie
             for (int i = 2; i < attributes.length; i++){

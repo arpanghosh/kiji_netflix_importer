@@ -21,17 +21,18 @@ public class Driver
     public static void main( String[] args )
     {
 
-        if (args.length < 1){
+        if (args.length < 2){
             System.out.println("Usage: Driver " +
-                    "<HDFS_input_path>");
+                    "<HDFS_input_path> " +
+                    "<output_table_URI>");
             return;
         }
 
         //Configuring log4j with defaults to log on console
         BasicConfigurator.configure();
 
-
         String inputFilePath = args[0];
+        String outputTableURI = args[1];
 
         Configuration hBaseConfiguration =
                 HBaseConfiguration.addHbaseResources(new Configuration(true));
@@ -45,7 +46,7 @@ public class Driver
                     .withInput(MapReduceJobInputs.newTextMapReduceJobInput(new Path(inputFilePath)))
                     .withOutput(MapReduceJobOutputs
                             .newDirectKijiTableMapReduceJobOutput(KijiURI
-                                    .newBuilder("kiji://localhost:2181/default/movies").build()))
+                                    .newBuilder(outputTableURI).build()))
                     .build();
         } catch (IOException e) {
             _logger.error(e);

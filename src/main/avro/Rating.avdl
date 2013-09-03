@@ -2,10 +2,15 @@
 
 protocol NetflixRecords {
 
-  /** Metadata for a review. */
+  /** Metadata for a rating. */
   record Rating {
     string user_id;
     int rating;
     string timestamp;
+  }
+
+  /** Array to store ids of recommended movies */
+  record RecommendedMovies {
+    array<string> movie_ids;
   }
 }
