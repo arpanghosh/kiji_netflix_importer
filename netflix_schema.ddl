@@ -10,7 +10,7 @@ WITH LOCALITY GROUP default
     movie_id "string" WITH DESCRIPTION 'unique id of movie',
     movie_name "string" WITH DESCRIPTION 'name of movie',
     movie_release_year "int" WITH DESCRIPTION 'year in which movie released',
-    similar_movies "string" WITH DESCRIPTION 'movies similar to this one for recommendations'
+    recommendations CLASS com.redeyetechguy.kiji.RecommendedMovies WITH DESCRIPTION 'movies similar to this one for recommendations'
   ),
   MAP TYPE FAMILY rating CLASS com.redeyetechguy.kiji.Rating WITH DESCRIPTION 'movie ratings given by customer'
 );
