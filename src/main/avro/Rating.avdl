@@ -11,6 +11,6 @@ protocol NetflixRecords {
 
   /** Array to store ids of recommended movies */
   record RecommendedMovies {
-    array<string> movie_ids;
+    array<string> similar_movie_ids;
   }
 }
